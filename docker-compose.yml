@@ -77,6 +77,7 @@ services:
         target: /usr/share/logstash/config/logstash.keystore
       - source: ca.crt
         target: /usr/share/logstash/config/certs/ca/ca.crt
+    ports: ['31311:31311']
     networks: ['stack']
     depends_on: ['elasticsearch']
     healthcheck:

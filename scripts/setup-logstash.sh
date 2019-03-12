@@ -37,3 +37,8 @@ echo "y" | /usr/share/logstash/bin/logstash-keystore create
 echo "Setting ELASTIC_PASSWORD..."
 echo "$ELASTIC_PASSWORD" | /usr/share/logstash/bin/logstash-keystore add 'ELASTIC_PASSWORD' -x
 mv /usr/share/logstash/config/logstash.keystore /config/logstash/logstash.keystore
+
+#Install plugins.
+echo "=== INSTALL Plugins ==="
+logstash-plugin install logstash-input-http
+logstash-plugin install logstash-filter-json
